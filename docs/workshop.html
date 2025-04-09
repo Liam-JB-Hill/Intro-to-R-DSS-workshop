@@ -1,0 +1,1916 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Workshop</title>
+
+<script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.13.2/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Intro to R DSS workshop</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="workshop.html">Workshop</a>
+</li>
+<li>
+  <a href="next_steps.html">Next Steps</a>
+</li>
+<li>
+  <a href="index.html">About</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Workshop</h1>
+
+</div>
+
+
+<style type="text/css">
+
+/* this chunck of css code enable 'pop-out' boxes to be used */ 
+
+.boxout {
+  padding: 1em;
+  background: bisque;
+  color: black;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  }
+.center {
+  text-align: center;
+}
+
+.warning {
+  padding: 1em;
+  background: pink;
+  color: black;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.center {
+  text-align: center;
+}
+
+/* this chunck of css code enables borders around images */ 
+.bordered{
+  border-style: solid;
+}
+</style>
+<p><br></p>
+<div id="what-is-r-and-what-are-its-advantages" class="section level2">
+<h2>1. What is R and what <em>are</em> its advantages?</h2>
+<p>This workshop will introduce you to a programming language, called R,
+which is a particularly useful tool to use when you need to handle and
+organise quantitative data and/or statistically analyse this kind of
+data.<a href="#fn1" class="footnote-ref"
+id="fnref1"><sup>1</sup></a></p>
+<p>There are several upsides (and a few challenges) associated with
+learning to use R, which I’ve summarised in this first section. For a
+fuller explanation of why R is a useful tool for researchers, especially
+those who want to do <a
+href="https://support-for-researchers.ed.ac.uk/getting-started/doing-research/open-research">Open
+Science/Research</a> and apply an <a
+href="https://doi.org/10.1177/0022219420945267">Open approach to
+Analysis</a><a href="#fn2" class="footnote-ref"
+id="fnref2"><sup>2</sup></a>, please refer back to my session on this
+subject earlier in the week: <a href="">link to previous
+session</a>.</p>
+<div class="boxout">
+<div class="center">
+<p><strong>Top tip/pointer:</strong></p>
+</div>
+<p>If you have attended the previous session (see link above), feel free
+to skip the rest of section 1. This will just be a recap of some key
+points from it.</p>
+</div>
+<p><br></p>
+<div id="the-advantages-of-learning-to-use-r" class="section level3">
+<h3>1.1 The advantages of learning to use R</h3>
+<p>Many of R’s advantages come from how well it aligns with the
+increased need for openness within academic research (i.e. the <a
+href="https://www.cos.io/open-science">Open Science</a> agenda). The
+Open Science research movement has its origins in Psychology<a
+href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> but has
+since expanded to many other disciplines, across both biomedical and
+social sciences. Whilst the benefits of Open Science are many, the
+specific value of R within this context is that:</p>
+<ul>
+<li><p><strong>R is open source.</strong> That means it is free for
+anyone to download and use. As is RStudio, which is the “Development
+Environment” in which you actually spend most of your time drafting and
+trialing your R code before running it.</p></li>
+<li><p><strong>R fully supports reproducibility of your
+analyses</strong>. Briefly, when using R to analyse data the process
+involves you creating a ‘script’ file. This Script contains the lines of
+code you wrote in order to: (1) wrangle the raw data you are working
+with into an analysable format and then (2) run statistical tests on
+that tidied data. Many academic journals now ask researchers to publish
+not just their data alongside their paper but also some form of
+‘analysis script’ file too. Providing both data and analysis script
+files enables full transparency of your workflow. This helps facilitate
+further research in the future, which may be looking to reproduce or
+advance on your original work. Providing others access to your Analysis
+Script is, essentially, what it means to do <em>Open Analysis</em>.<a
+href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a></p></li>
+</ul>
+<p>In combination, these are powerful and important points because it
+means that <strong>if you use R to carry out your analysis you will be
+doing so in a way that allows others to easily check, learn from, and
+reproduce your work.</strong> <span style="color: red;"><strong>This
+makes it a great Open Science/Research tool.</strong></span></p>
+</div>
+<div id="the-disadvantages-of-not-learning-to-use-r"
+class="section level3">
+<h3>1.2 The disadvantages of not learning to use R</h3>
+<p>In contrast, many paid for stats packages are much less well suited
+to such ‘openness’ because of the more intuitive, but ultimately opaque,
+interfaces they offer (e.g. drop down menus, drag and drop interfaces).
+This results in a much less transparent record of the steps you took
+when doing an analysis, making it harder for others to check, learn
+from, and/or replicate exactly what you did when analysing your
+data.</p>
+<p>That brings me to another advantage of R over paid-for packages
+(e.g. SPSS, STATA, SAS). Because R is open source (AKA <em>FREE!</em>),
+<strong>it’s a tool you can take with you into any future workplace
+(e.g. after finishing your degree)</strong>. Knowing how to manage data
+and perform statistical analysis in a paid-for package (e.g. SPSS) is
+impressive but knowing how to do this in R is potentially <em>even
+more</em> valuable to you in the long run. For example, what if you’re
+working for an employer that doesn’t already hold a licence for SPSS?
+Perhaps they’ve already invested in an alternative proprietary stats
+packages (e.g. STATA, SAS) or simply can’t afford an SPSS license?
+Indeed, there are many different stats packages out there and not every
+organisation invests in uses the same one(s). This fact means R is often
+a <strong>much better tool for collaboration too</strong>. In projects
+where you want to work across institutions and, especially, with those
+outside academia, conducting your analysis via an open-source platform
+like R can be vital. This ensures a ‘shared language’ is used amongst
+collaborators, which is accessible to all. <a href="#fn5"
+class="footnote-ref" id="fnref5"><sup>5</sup></a></p>
+</div>
+<div id="the-challenges-involved-in-learning-to-use-r"
+class="section level3">
+<h3>1.3 The challenges involved in learning to use R</h3>
+<p>Being fair, R does have a steeper learning curve for new users than
+stats packages that use drop-down menus and graphical user interfaces.
+The <strong>command line entry method</strong> you have to use to ask R
+to do things certainly feels less intuitive and more unforgiving to
+begin with. Think of it as <strong>learning a new language</strong>, in
+the course of learning about data management and statistics. That means
+fixing grammar and punctuation errors in your use of this new
+<em>programming</em> language will likely be something ‘extra’ that
+slows you down a little more as you learn to ‘run your first analysis’
+and get some results to interpret. This need to ‘speak R’s language’
+with reasonable fluency does reduce the risk of you from simply
+FAFO-ing<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a>
+your way through deceptively simple ‘drag-and-drop’ analysis menus to
+arrive at a set of incorrect results as your output though 😱</p>
+<p>An advantage of R, which could also be viewed as a disadvantage (at
+least initially), is that <strong>the functions you use within R to run
+certain statistical tests often require you to be more precise in your
+defining of them</strong>. For example, most methods for running
+Multi-Level Models in R require you to specify the covariance structure
+you want applied in the model or they won’t run. In constrast, if you
+don’t specify the covariance structure in a Multi-level Model in SPSS it
+will ‘help you out’ by applying its default choice of covariance
+structure for you (i.e. Variance Components). In the long run, it’s
+certainly a good thing that R more frequently forces you to make
+conscious decisions about important features of your models. However, it
+does again steepen the learning curve as you begin to learn about some,
+particularly more advanced, statistical methods because you generally
+need to know <em>more</em> about how they work before you can start
+practicing and learning how to build them in R.</p>
+</div>
+<div id="help-in-overcoming-these-challenges" class="section level3">
+<h3>1.4 Help in overcoming these challenges</h3>
+<p>There is a lot of support out there that you can call upon when you
+get stuck whilst using R too. Because R is open access, a <strong>very
+vibrant user community</strong> has grown up around it over the past
+10-15 years. There are great advice forums and online how-to guides
+(e.g. <a href="https://stackoverflow.com/">Stack Overflow</a>, <a
+href="https://stats.stackexchange.com/questions/tagged/r">StackExchange</a>,
+<a href="https://www.r-bloggers.com/">R-bloggers</a>, <a
+href="https://rc2e.com/">Cookbook for R</a>, <em>and many more</em>).
+Nine times out of ten, when you get stuck trying to do something in R a
+quick ‘google’ of <em>“how to do X in R?”</em> will bring up dozens of
+links to solutions.</p>
+<p>Extending this, <strong>GenAI can even be a helpful, time-saving tool
+for R-Users too (e.g. helping you debug your code by spotting/explaining
+errors in it)</strong>. <span
+style="color: red;"><strong>However</strong>, I would strongly recommend
+developing your own knowledge and skills in R to a decent level
+<em>before</em> trying to use these GenAI tools to help you cut corners
+and speed up your coding.** Please see this <a
+href="https://blogs.ed.ac.uk/teaching-matters/genai-vs-academic-skills-development/">blog
+by John Wilson</a> for a more detailed argument for why responsible use
+of GenAI when learning to code is <em>really</em> important and worth
+your patience and effort!</span></p>
+</div>
+</div>
+<div id="so-what-is-the-purpose-of-this-workshop"
+class="section level2">
+<h2>2. So, what is the purpose of this workshop?</h2>
+<p>Think of this workshop as <strong>a ‘day 1’ introduction to R, that
+will ensure you have a good grounding in its core features</strong>. It
+will also cover some foundational principles for how I would recommend
+you try to work within R. Consquently, <strong>this workshop will help
+you establish a good ‘workflow’ in R</strong> from the outset, which
+enables you to then use it efficiently and effectively.</p>
+<p>Thus, you might want to think of this workshop as a ‘down-payment’,
+designed with the aim of flattening your future learning curve in R as
+much as possible. It certainly contains a lot of ‘foundational’
+information (e.g. about good habits to get into when using R) that I
+wish I had been taught back in 2008, when I first became an R-User!</p>
+<p><span style="color: red;">This workshop is <em>NOT</em> going to jump
+straight into teaching you how to do statistical analyses in R.</span>
+That would be too much to also throw at you in this first workshop. It
+is a logical ‘next step’ you could take though (see advice below)…</p>
+<div class="boxout">
+<div class="center">
+<p><strong>Extra tips/pointers:</strong></p>
+</div>
+<p>At the end of this workshop I <em>will</em> point to some really good
+online courses that you can then use to get going with learning how to
+use R to do all sorts of interesting things though, such as:</p>
+<ul>
+<li>Tidying up and manipulating new data you’ve collected, wrangling it
+into a state that is analysable.</li>
+<li>Visualising your data (e.g. using Graphs, Charts, Tables).</li>
+<li>Statistically analysing your data, using either Null Hypothesis
+Significance Testing (NHST) and Bayesian methods.</li>
+</ul>
+</div>
+<p><br></p>
+</div>
+<div id="getting-set-up-with-r-and-rstudio" class="section level2">
+<h2>3. Getting set up with R and RStudio</h2>
+<p>R is a programming language and on its own can be <em>VERY</em>
+cumbersome to use. You’re not going to get the most out of it this way
+either (e.g. some of the ‘reproducibility’ advantages discussed in
+section 1). For that reason, we tend to <strong>use R indirectly through
+a second software that ‘wraps’ around it known as a “Integrated
+Development Environment (IDE)” or “Code Editor”.</strong> The specific
+Code Editor we’re going to use in this role is called
+<strong>RStudio</strong>. RStudio allows us to more easily play around
+and test out our code out as we’re building. This software is also a
+little more user friendly (e.g. there are some drop-down menus 😃) and
+it has additional functionality within it that better allows us to
+generate a record of the steps we’ve gone through to write our code and
+develop it.</p>
+<p>With that explained, below are instructions on how to download and
+install R and RStudio onto a computer you have permission to download
+software onto.</p>
+<div class="warning">
+<div class="center">
+<p><strong>Warnings!</strong></p>
+</div>
+<p><strong>If you are on a University owned computer</strong> (e.g. a PC
+in a computer cluster) this will normally have R and RStudio
+pre-installed.</p>
+<ul>
+<li><em>If it is not pre-installed</em> then R and R studio should be
+downloadable via the university’s Software Centre app. Full information
+on that app and how to use it can be found <a
+href="https://information-services.ed.ac.uk/computing/desktop-personal/supported/windows-10/training/software-center">here</a>.</li>
+</ul>
+<p><strong>If your own computer already has R and/or RStudio
+installed</strong> then either use the version you already have or
+uninstall these prior versions before completing the install steps
+below.</p>
+</div>
+<p><br> First, we need to <strong>download and set up</strong> <span
+style="color: red;"><strong>R</strong></span>, do so by:</p>
+<ol style="list-style-type: decimal">
+<li>Going to the CRAN website, or to give it its full name: the
+“Comprehensive R Archive Network”: <a href="https://cran.r-project.org/"
+class="uri">https://cran.r-project.org/</a></li>
+<li>In the <strong>Download and Install R</strong> window click the link
+to take you to the version of R you need (i.e. the version specific to
+the operating system on your computer). If you want to:<a href="#fn7"
+class="footnote-ref" id="fnref7"><sup>7</sup></a>
+<ul>
+<li><strong>Downloading R for macOS</strong>, first check which Apple PC
+you have. On the top-left of your screen click the Apple logo, click
+About This Mac, noting what the Processor line says. Then select the
+appropriate package, based on your machine, from the list to
+download.</li>
+<li><strong>Downloading R for Windows</strong>, then I’d follow their
+advice to install the ‘base’ package by clicking the link to
+<strong>install R for the First time</strong>). This will take you to a
+page where you can download: <span style="color: blue;"><em>Download
+R-4.4.3 for Windows</em></span>, which is what I’d do.</li>
+</ul></li>
+<li>Once the file has downloaded, go to you downloads folder, open the
+installer you have just downloaded and follow the instructions to
+install, while keeping the default options.</li>
+</ol>
+<p>Second, we need to <strong>download and set up</strong> <span
+style="color: red;"><strong>RStudio</strong></span>, do so by:</p>
+<ol style="list-style-type: decimal">
+<li>Going to the following webpage: <a
+href="https://rstudio.com/products/rstudio/download/"
+class="uri">https://rstudio.com/products/rstudio/download/</a></li>
+<li><span style="color: red;"><em>Ignore</em></span> the <em>Install
+R</em> prompt as you scroll down (you’ve already installed it).</li>
+<li>Scroll further down to the <strong>All Installers and
+Tarball</strong> table and download the version appropriate for your
+Operating System (e.g. Windows, macOS).</li>
+<li>Once the file has downloaded, go to your downloads folder and…
+<ul>
+<li><em>If on a Mac</em>:
+<ul>
+<li>Double click on the <span
+style="color: blue;"><em>RStudio-2024.12.1-563.dmg</em></span> file you
+just downloaded to unpack it.</li>
+<li>In the window that opens up drag the RStudio icon and drop it into
+the <em>application folder</em>.</li>
+<li>Double click on the applications folder to open it, find RStudio in
+the list and double click on it to open it up.<a href="#fn8"
+class="footnote-ref" id="fnref8"><sup>8</sup></a></li>
+</ul></li>
+<li><em>If on a Windows PC</em>:
+<ul>
+<li>If on a Windows PC double click on the <span
+style="color: blue;"><em>RStudio-2024.12.1-563.exe</em></span> file you
+just downloaded and follow the instructions to install, while keeping
+the default options.</li>
+</ul></li>
+</ul></li>
+</ol>
+</div>
+<div id="setting-up-your-first-workflow-in-r-and-rstudio"
+class="section level2">
+<h2>4. Setting up your first workflow in R and RStudio</h2>
+<p>If you’ve followed the instructions all the way through in the
+previous section (<a href="#getting-set-up-with-r-and-rstudio">3.
+Getting set up with R and RStudio</a>), or already have RStudio
+installed on your computer, you should now be able to open this window
+open on your desktop:</p>
+<div class="bordered">
+<p><img src="images/RStudio_landing_page.png" /></p>
+</div>
+<p><br> We’ll explain in a moment how to interpret what you’re looking
+at in this window. First though we’ll take one more step to
+<strong>initiate our first <span style="color: red;">project</span> in
+R, because within R we use projects to organise our
+<em>workflow</em></strong>. For example, imagine you start a research
+program that is going to involve a series of studies. For the analysis
+of the data from these studies you could create one R project and within
+this project you could have a sub-folder for each study. In these
+folders you would then keep the data for each study, the script file(s)
+for analysing each of these datasets and any other relevant metadata.<a
+href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a></p>
+<div id="creating-your-first-r-project" class="section level3">
+<h3>4.1. Creating your first R Project</h3>
+<p>To create a new Project in RStudio:</p>
+<ol style="list-style-type: decimal">
+<li>In the drop-down menu at the top of RStudio select <strong>File &gt;
+New Project…</strong></li>
+<li>In the New Project Wizard window that pops up select <strong>New
+Directory</strong>.</li>
+<li>On the next window, define your project type as a <strong>New
+Project</strong>.</li>
+<li>On the next window, in <strong>Directory Name:</strong> give your
+project a name (e.g. <span
+style="color: blue;"><em>my_first_R_project</em></span>).</li>
+<li>If you then click on <strong>Create Project</strong>, you’ll find
+this Project is created as a folder in whatever default location new
+folders are created in on your computer. You have the option to select
+where on you would prefer this project to live though (e.g. on your
+desktop, on your university onedrive). To do this click <strong>Browse…
+and selecting your preferred location</strong>.</li>
+</ol>
+<div class="boxout">
+<div class="center">
+<p><strong>Extra tips/pointers:</strong></p>
+</div>
+<p>Think <em>carefully</em> about where you want your project to be
+housed, as it will normally also contain an electronic copy of the data
+from your research. Therefore the location of this project should be in
+a suitably secure location, which complies with the standards set out
+when you obtained ethical approval for your research.</p>
+<p>For example, the extra data security offered by housing your project
+on a Univeristy server or cloud based service (e.g. onedrive) may be
+essential if you are going to be handling sensitive data as part of your
+project!.</p>
+</div>
+<p><br> You’ll notice that having created your project, the bottom right
+pane in RStudio has changed. It now indicates that you are now working
+within this new directory/project on your computer (see image
+below):</p>
+<div class="bordered">
+<p><img src="images/my_first_R_project.png" /></p>
+</div>
+<p><br> One final step we’ll go through, before I explain RStudio’s
+layout, is to create a file within your new project. Specifically, let’s
+create an R Script. These as a type of files that I mentioned in section
+1, within which we often code/write the instructions for our analyses.
+That means they’re the specific files we often want to share when we
+want to do <em>Open Analysis</em> and make our workflow publicly
+available.</p>
+</div>
+<div id="creating-your-first-r-script" class="section level3">
+<h3>4.2. Creating your first R Script</h3>
+<p>To create a new R script:</p>
+<ol style="list-style-type: decimal">
+<li>In the drop-down menu at the top of RStudio select <strong>File &gt;
+New File &gt; R Script</strong></li>
+<li>To give it a unique name and save it within our Project, then:
+<ul>
+<li>select <strong>File &gt; Save</strong></li>
+<li>In the <strong>Save File – Untitled 1 window</strong> give the R
+Script a suitable name (e.g. <span
+style="color: blue;"><em>my_first_R_script</em></span>) and click
+<strong>save</strong>.</li>
+</ul></li>
+</ol>
+<p>Now you’ve set up your workflow RStudio should look like this, with
+your first R script saved within your first R project 🥳:</p>
+<div class="bordered">
+<p><img src="images/my_first_R_script.png" /></p>
+</div>
+</div>
+</div>
+<div id="understanding-a-typical-workflow" class="section level2">
+<h2>5. Understanding a typical workflow</h2>
+<p>You’ll see we now have four panes within the R Studio window. To
+understand how they interact in a typical workflow let’s focus first on
+the top left pane first:</p>
+<div id="the-code-editor-top-left-pane" class="section level3">
+<h3>5.1. The code editor (top left pane)</h3>
+<p>In the code editor the new, blank script that we have just created is
+displayed (i.e. <span style="color: blue;">my_first_R_script.R</span>).
+Think of this pane literally as a space where you can write <em>a
+script</em>, just as you might if you wanted to rehearse for an
+important presentation or interview. Essentially, you will end up
+writing a list of instructions for R, which you will then want to
+present to them<a href="#fn10" class="footnote-ref"
+id="fnref10"><sup>10</sup></a>. If you’ve written your script well, then
+R will understand what you’re trying to ask it to do in this script, and
+it will helpfully carry out these actions.</p>
+<p>Before we get on to practicing doing that, let’s complete our tour of
+the other panes though…</p>
+</div>
+<div id="the-console-bottom-left-pane" class="section level3">
+<h3>5.2. The console (bottom left pane)</h3>
+<p>This pane is literally a <em>window</em> into the R software program,
+which RStudio has opened within it.</p>
+<p>RStudio is very aware that it’s primary role is to act as a
+go-between between you and R. So, within it (as illustrated below) is a
+space:</p>
+<ul>
+<li>For you to write instructions (i.e. the code editor)</li>
+<li>For R to receive these instructions and act upon them (i.e. the
+console)</li>
+<li>A mechanism for passing these instructions along<a href="#fn11"
+class="footnote-ref" id="fnref11"><sup>11</sup></a>, which we’ll explain
+in a moment.</li>
+</ul>
+<div class="bordered">
+<p><img src="images/script_to_console.png" /></p>
+</div>
+<div id="command-r-to-do-something" class="section level4">
+<h4>5.2.1. Command R to ‘do something’</h4>
+<p>Let’s illustrate some important features of this workflow by giving R
+some instructions to act on.</p>
+<ol style="list-style-type: decimal">
+<li>Start by writing the the following, really simple sum
+<code>1 + 1</code> into your R script.</li>
+<li>The on the far right of the Code Editor press the <em>Run</em>
+button (circled in <span style="color: red;">red</span> in the image
+below). This will pass the instruction written in your script to the R
+console, for it to carry out.</li>
+</ol>
+<div class="bordered">
+<p><img src="images/my_first_sum.png" /></p>
+</div>
+<p><br> This should produce the following output in the console shown
+below, which shows us that R has heard our instruction, reporting it
+back to us on the first line (i.e. <code>&gt; 1+1</code>) and on the
+next one it has acted upon it by carrying out this sum for us
+(i.e. <code>[1] 2</code>).</p>
+<div class="bordered">
+<p><img src="images/my_first_output.png" /></p>
+</div>
+</div>
+<div id="comment-on-your-commands" class="section level4">
+<h4>5.2.2. Comment on your commands</h4>
+<p>Now let’s show you how to also write ‘comments’ into your R script.
+These are lines of code that aren’t passed on to your console when you
+hit <span style="color: red;">Run</span>.</p>
+<p>To make comments in the Script that aren’t passed on to R put a
+<code>#</code> symbol in front of the line they appear on. For example,
+amend your script so the first line reads <code>#1+1</code>, as
+illustrated below:</p>
+<div class="bordered">
+<p><img src="images/my_first_comment.png" /></p>
+</div>
+<p><br> <span style="color: red;"><strong>What is different about the
+console output if you hit Run now? Is the calculation carried out by R
+in the console?</strong></span></p>
+<p><strong>No!</strong></p>
+<p>Let’s combine what we’ve learned hear about comments and commands by
+entering the following two lines of code into the editor:</p>
+<pre class="r"><code>1+1
+# this is my first simple sum in R!</code></pre>
+<p>Then:</p>
+<ol style="list-style-type: decimal">
+<li>Hold down the left mouse button and highlight both lines of
+code.</li>
+<li>Press <em>Run</em> one final time.</li>
+</ol>
+Below is the output you should then see appear in the console (circled
+in <span style="color: red;">red</span>):
+<div class="bordered">
+<p><img src="images/my_first_output_with_comment.png" /></p>
+</div>
+<p><br></p>
+<p>You’ll note the sum has been calculated again (after removal of the #
+in front of it) but no additional output results from the additional
+‘comment’ line we’ve added. The comment gets passed on to R but because
+of the # symbol in front of that line R knows to ignore it. In other
+words, it know you aren’t trying to give it ‘commands’ in the
+<em>“hashtagged”</em> line.</p>
+<div class="boxout">
+<div class="center">
+<p><strong>Extra tips/pointers:</strong></p>
+</div>
+<p>If you hit the Run button without selecting both lines then just the
+line that your cursor is currently active on will run. Very often, we
+have multiple lines of code we want to run in one ‘chunk’. To do this we
+can highlight the section we want to <em>Run</em> manually, like we did
+here. Alternatively, if we want to <em>Run</em> all the code within the
+script:</p>
+<ol style="list-style-type: decimal">
+<li>Move your cursor back so it is active (flashing) on the first line
+of your script.</li>
+<li>In RStudio’s menu go to <strong>Code &gt; Run Region &gt; Run from
+Line to End</strong>.</li>
+</ol>
+</div>
+<p><br> Commenting as you go when you write code is an EXTREMELY
+IMPORTANT activity. There’s a quite famous quote by <a
+href="https://en.wikipedia.org/wiki/Martin_Fowler_(software_engineer)">Martin
+Fowler</a> that illustrates the problems that not making comments
+regularly creates, which is:</p>
+<center>
+<strong><em>“Any fool can write code that a computer can understand.
+<br> Good programmers write code that humans can
+understand.”</em></strong>
+</center>
+<p><br> <span style="color: red;"><strong>Considering the advantages
+that R has over programs that don’t encourage/allowing commenting. Why
+do you think it would be advisable to comment frequently, and at length,
+on code that you write whilst performing statistical
+analysis?</strong></span></p>
+<p><span style="color: blue;"><strong>My answer:</strong></span> On a
+purely selfish level, comments also help <strong>you</strong> structure
+and plan out the code you need to write and, once it is written, aid
+<strong>you</strong> in recalling to mind what different bits of code
+do. This can be particularly useful if it’s been a few days/weeks/months
+since you last looked at your analysis script and you’re trying to do
+something complex within it. This all comes back to an issue of Language
+too. As I mentioned in section 1.3, R needs you to communicate with it
+in its Language but we also need to provide translation (for ourselves
+and others) so that this ‘machine language’ is more easily interpretable
+by humans!</p>
+</div>
+<div id="saving-your-r-script" class="section level4">
+<h4>5.2.3. Saving your R Script</h4>
+<p>Before we move on to look at the remaining two panes we’ll quickly
+pause to save the code we’ve written in our R Script. The quickest way
+to do this is to press the diskette symbol in the tool bar of the Code
+Editor (circled in <span style="color: red;">red</span> in the figure
+below):</p>
+<div class="bordered">
+<p><img src="images/saving_my_first_script.png" /></p>
+</div>
+<p><br></p>
+<div class="boxout">
+<div class="center">
+<p><strong>Extra tips/pointers:</strong></p>
+</div>
+<p>You’ll notice that as soon as we do this, the name of the Script in
+the tab above turns <strong>black</strong>. If we wrote more code the
+name of the Script would turn back to <span
+style="color: red;"><strong>red</strong></span>, which is a useful
+reminder that there is work within the script that has not yet been
+saved!</p>
+</div>
+</div>
+</div>
+<div id="the-environment-top-right-pane" class="section level3">
+<h3>5.3. The Environment (top right pane)</h3>
+<p>The panel in the top right defaults to showing you your current R
+“environment”. This should be empty at the moment because we haven’t put
+anything in our project’s environment yet. Often one of the first things
+we’ll do when starting work on a project though is to load data into the
+environment that we want to work with in some way.</p>
+<p>Let’s have a go at doing that now by following these steps:</p>
+<ol style="list-style-type: decimal">
+<li>First, we need to put some data in our project folder that we can
+then load into our R Environment. To do this, download the <span
+style="color: blue;"><em>ExampleSDQ_data.csv</em></span> dataset from <a
+href="link%20to%20be%20added">here</a>, and place it in the
+*my_first_R_project** directory that you created earlier (e.g. I created
+my project on my desktop, so I just dropped the file in its ‘folder’
+there). If you’ve done this correctly the file should now be listed in R
+Studio in the bottom left pane (as per the screenshot below (added
+dataset circled in <span style="color: red;">red</span>):</li>
+</ol>
+<div class="bordered">
+<p><img src="images/my_first_dataset.png" /></p>
+</div>
+<p><br></p>
+<ol start="2" style="list-style-type: decimal">
+<li>Having put some data in our project directory/folder we can now
+import it into our environment by adding the following line of code to
+our script and running it:</li>
+</ol>
+<pre class="r"><code>my_first_dataset &lt;- read.csv(&quot;ExampleSDQ_data.csv&quot;, header = T)</code></pre>
+<p>This line instructs R to create an object called <span
+style="color: blue;"><em>my_first_dataset</em></span> in your
+environment (<em>reminder</em>: top right pane in RStudio), which
+contains the data from this file. There are many different types of
+objects that we can place or create in our environment and we’ll discuss
+a few of these different types in a bit more detail later. For now
+though you can at least see that there is something in our environment
+that wasn’t there before (circled in <span
+style="color: red;">red</span> in the image below):</p>
+<div class="bordered">
+<p><img src="images/my_first_import.png" /></p>
+</div>
+<p><br></p>
+<div class="boxout">
+<div class="center">
+<p><strong>Extra tips/pointers:</strong></p>
+</div>
+<p>Certain objects, like the one we’ve just created, which is called
+dataframe, can be viewed and explored in more detail by clicking on them
+in the Environment pane. This will open them up as a tab in the Code
+Editor pane. For example, if you do that with the <span
+style="color: blue;"><em>my_first_dataset</em></span> object the tab
+that opens contains a view of the data contained in this dataset.</p>
+<p>Also, before we move on, here’s a few tips on the rules for naming
+“objects” in R:</p>
+<ul>
+<li>Objects’ names can’t begin with a number (e.g. 0, 1, etc…)</li>
+<li>Objects’ names can’t contain symbols that denote other operations in
+R or mathematical functions (for example: +, $, @, !, ^, -, / or *)</li>
+<li>Object names are case sensitive, so be careful what you
+capitalise!</li>
+<li>Functions (which we talk about later) have their own names and it is
+not a good idea to use the same name for an object as you do for a
+pre-existing function, confusion will ensue 😖</li>
+</ul>
+</div>
+<p><br> Below, you’ll see an extended illustration of the workflow that
+we started to sketch out earlier. You’ll see that we have added a few
+extra paths through the workspace RStudio lays out for you. Whilst
+everything is still being controlled by what we write in the Code
+Editor, this illustration shows how we often use the editor to instruct
+R to do things that result in it interacting with the environment and
+the project spaces, as well as the console. For example, we often ask R
+to:</p>
+<ul>
+<li>Fetch things (e.g. datasets) from external directories in our R
+project (which can be viewed in the bottom right pane) and put them the
+internal environment of our R project (which is depicted in top right
+pane), defining them as “objects” in the environment.</li>
+<li>Once we have objects in our environment, we can instruct R to carry
+out operations on the data it now has access to (e.g. we can instruct it
+to carry certain analyses we want run on these datasets).</li>
+</ul>
+<p><strong>This part of the workshop has hopefully given you a good
+overview of what you’re looking at when you now open up RStudio and the
+basic ‘mechanics’ of the R workflow, as laid out within
+RStudio.</strong></p>
+<div class="bordered">
+<p><img src="images/full_workflow.png" /></p>
+</div>
+<p><br></p>
+</div>
+</div>
+<div id="function-and-packages-essential-tools" class="section level2">
+<h2>6. Function and Packages: essential tools</h2>
+<p>At this point R might not seem the most powerful tool because, so
+far, you’ve only seen used it as a glorified calculator and data viewer.
+Now though, <strong>we’re now going to look at some features which can
+be used within the R workflow that really make it stand out from the
+crowd</strong>! We’ve actually already used one of these features, to
+upload our dataset into the environment…</p>
+<div id="functions" class="section level3">
+<h3>6.1. Functions</h3>
+<p>Functions are a very powerful feature of R, they are basically
+pre-packaged commands for performing more complex actions on your data
+within R. A function is denoted by their name followed by a bracket,
+within which a series of “arguments” are specified and separated by
+commas. As so:</p>
+<pre class="r"><code>function (argument1, argument2, etc...)</code></pre>
+<p>The function we used in the previous section (<a
+href="#the-environment-top-right-pane">5.3. The Environment (top right
+pane)</a>) was called <code>read.csv</code>. It is a specific function
+that performs the operation of importing a dataset of a certain type
+into R ( <code>.csv</code> type files, to be specific ). You may recall
+this line:</p>
+<pre class="r"><code>my_first_dataset &lt;- read.csv(&quot;ExampleSDQ_data.csv&quot;, header = T)</code></pre>
+<p>To explain what it did in more detail:</p>
+<ol style="list-style-type: decimal">
+<li>The <code>[name] &lt;- [command]</code> layout of this code tells R
+that you are commanding it to create an object. The name of the object
+appears on the left of the <code>&lt;-</code> symbol
+(i.e. <code>my_first_dataset</code>). The commands that instruct R tell
+as to how the object is defined are then given to the right.</li>
+<li>In this case, the commands that define the object uses the function
+called <code>read.csv</code> to create a dataframe in your environment
+that contains the data from the file you added to your Project
+folder.</li>
+<li>Within this specific function, the first argument
+<code>“ExampleSDQ_data.csv”</code> tells R the name of the specific file
+it needs to fetch from your project. The second argument
+<code>header = T</code> is important too. It tells R something about how
+the data is laid out within the file, but we’ll learn what exactly that
+does in more detail a minute.</li>
+</ol>
+<div class="boxout">
+<div class="center">
+<p><strong>Extra tips/pointers:</strong></p>
+</div>
+<p>One nice thing to notice about this approach to using data is that it
+means the original data file, which is still in your folder remains
+‘untouched’. You pull data into the R environment and can edit and play
+around with this “object” as much as you want but this is completely
+separate from the original datafile.</p>
+<p>Providing you maintain good version control and comment on it
+regularly, your script will have a record of all that ‘playing around’
+too, which means you should pretty much always have a nice ‘paper trial’
+from the raw data up to the ‘cleaned and tidied’ dataset you then
+usually end up analysing.</p>
+<p>This is less easy to do in some other stats packages, where you work
+directly with the original data nad often overwrite or change that files
+in ways can make it hard to retrace your steps back and start again,
+should you ever need to.</p>
+</div>
+<p><br> <strong>The strength of R is in its functions</strong> because
+when you become more skilled you can write your own functions to do
+complicated (but necessary) things to your data. These then become
+easily reproducible once you’ve written them as functions. For example,
+behind the simple <code>read.csv</code> command you just used may lie
+hundreds of lines of code that get it to work, but all you needed to do
+to get it to run was input a couple of instructions (i.e. the arguments)
+within this nicely packaged function’s parentheses!</p>
+<p>Also, <strong>because R is open source other researchers are writing
+new functions (and refining olds ones so they work better) all the
+time</strong>. This is why “googling as you go” is a common practice
+when working in R. There’s always new functionality to find that can
+make your life easier or greatly improve your code’s efficiency or
+effectiveness.</p>
+<div class="boxout">
+<div class="center">
+<p><strong>Extra tips/pointers:</strong></p>
+</div>
+<p>This is an area where R tends to have the edge over proprietary
+packages too (e.g. SPSS, STATA, SAS). This is because <strong>it is not
+only a powerful statistical software but also a thriving community of
+developers who, as you read this, are pushing the boundaries of what you
+can do with R</strong>, developing new functions and publishing them as
+open source materials for us to use in our future analyses.</p>
+<p>For example, packages for doing advanced Bayesian Modelling were
+available in R for almost a decade prior to SPSS getting around to
+introducing some, very limited, functions for calculating Bayes Factors,
+for certain types of analyses in mid-2017.</p>
+</div>
+<p><br></p>
+</div>
+<div id="the-help-function" class="section level3">
+<h3>6.2. The Help function</h3>
+<p>The idea of learning lots of new function’s names and their arguments
+might seem daunting. After all, these are akin to learning new words and
+syntaxes in a new language. You’ll quickly find that you can make good
+progress in “making yourself understood” by learning a few common
+functions you’ll use very frequently though (e.g. <code>read.csv</code>
+whenever you want to load a new .csv file dataset into your
+environment).</p>
+<p>One of the more frequently used and important functions you’ll get
+familiar with is <code>help</code> function, or more precisely:
+<code>help()</code>. Enter the name of any function between help’s
+bracket and run this request in the console and, in the bottom right
+hand pane of RStudio, an explanation of the function you need ‘help’
+understanding will pop up!</p>
+<p>To find out more about the <code>read.csv</code> function run a help
+request on it by entering the following command and running it:</p>
+<pre class="r"><code>help(&quot;read.csv&quot;)</code></pre>
+<p>Read the Description in the R Documentation page that pops up in the
+bottom right pane. Also, scroll down to the <strong>Arguments</strong>
+list within it and find the entry for the <code>header</code> argument.
+Here you will learn what this argument does when it is set to equal
+<code>TRUE</code>, as was the case in your code.</p>
+<div class="boxout">
+<div class="center">
+<p><strong>Extra tips/pointers:</strong></p>
+</div>
+<p><strong>These are some extra things you can view in the bottom right
+pane.</strong></p>
+<p>Given we’ve briefly had our attention drawn to the bottom right pane
+for the first time, we’ll take an opportunity to highlight what a few of
+the other tabs within this area allow us to do/see:</p>
+<ul>
+<li><strong>Files</strong>, will show you your R project area. There’s
+quick-button options to add additional folders, rename files etc… here
+too.</li>
+<li><strong>Plots/Viewer</strong>, is where visualisations of your data
+will appear when you request them (e.g. graphs, charts etc…). Once
+you’ve created them there’s also a button you can click on here to
+export them in a variety of file-types.</li>
+<li><strong>Packages</strong>, contains a list of all the R packages you
+have loaded on your computer. <strong>What are R packages you might ask?
+Well, that’s something we’re about to talk about… 😏</strong></li>
+</ul>
+</div>
+</div>
+<div id="adding-packages-to-add-new-functions" class="section level3">
+<h3>6.3. Adding Packages (to add new <em>Functions</em>)</h3>
+<p>The <strong><em>“Functions”</em></strong> that are at the heart of
+R’s amazing flexibility are <strong>stored in folders known as
+“Packages”</strong>. There are literally thousands of add-on Packages
+now available in R that allow you to do all sorts of new and exciting
+things (e.g. new packages for doing different types of analyses that are
+growing in popularity )<a href="#fn12" class="footnote-ref"
+id="fnref12"><sup>12</sup></a>. More packages are being created all the
+time too, which build exponentially on R’s base functionality.</p>
+<p>Within the last decade several packages have come along that contain
+families of functions that have really enhanced the usability of R and
+expanded its user base. In particular, there are packages created by <a
+href="https://hadley.nz/">Hadley Wickham</a> (e.g. <code>tidyr</code>,
+<code>dplyr</code>, collectively referred to as part of the
+<code>tidyverse</code> of R packages) that have made some of the
+conventions of programming in R a bit more user-friendly, and thus
+intuitive for new learners to get to grips with.</p>
+<p>To illustrate the process of adding new packages to your R
+environment we’re going show you how to add some of these
+<code>tidyverse</code> packages, which some of my past students have
+found very useful packages to learn as they started out with using
+R.</p>
+<div id="installing-new-packages" class="section level4">
+<h4>6.3.1. Installing new Packages</h4>
+<p>The first step when accessing new packages is to download them to
+your computer. You can do this in RStudio using the
+<code>install.packages()</code> function. First, we’ll create an object
+that is a list of the names of five packages we want to add, called
+<code>pkg</code>. Then, we’ll use the <code>install.packages()</code>
+function to download this list of packages from an online
+repository.</p>
+<p>To complete these steps write the following code in your script and
+run it in the console:</p>
+<pre class="r"><code># list of useful packages
+pkg &lt;- c (&quot;tidyr&quot;, &quot;dplyr&quot;, &quot;ggplot2&quot;, &quot;knitr&quot;, &quot;rmarkdown&quot;)
+
+# install them, downloading them from the CRAN repository
+install.packages(pkg, repos = &quot;http://cran.rstudio.com&quot;)</code></pre>
+<p>Your computer should happily whirr away for a minute or two
+downloading these packages.</p>
+</div>
+<div id="loading-new-packages-after-installing" class="section level4">
+<h4>6.3.2. Loading new packages (after installing)</h4>
+<p>Like datasets in your project directory/folder, the functions in the
+packages we just installed packages <strong>are not</strong> immediately
+available for you to now call upon in your environment. Instead,
+whenever you start a project that needs to use functions from certain
+package you need to load these packages into the project’s R environment
+(i.e. top right pane, discussed in section 5.3). We do this by loading
+them as <em>“libraries”</em>. To do this for the five packages you’ve
+just installed, write the following code in your script and run it in
+the console:</p>
+<pre class="r"><code># load the five packages that we just installed into your project&#39;s environment
+library(tidyr)
+library(dplyr)
+library(ggplot2)
+library(knitr)
+library(rmarkdown)</code></pre>
+<p>In fact, it is not uncommon for the first few lines of any R script
+to simply contain a list of lines like this, which ‘load up’ all the
+libraries of functions needed to make the subsequent commands in the
+script run in the R environment.</p>
+<div class="boxout">
+<div class="center">
+<p><strong>Extra tips/pointers:</strong></p>
+</div>
+<p>Alternatively, <strong>there’s a simple drop-down menu option you can
+use within R to search for and then download new packages</strong>. To
+use this:</p>
+<ol style="list-style-type: decimal">
+<li>In the toolbar go to: <strong>Tools &gt; Install
+Packages…</strong></li>
+<li>You shouldn’t need to change the <strong>Install from:</strong>
+option if you’re downloading a package from the CRAN repository (as we
+did) but if you’re adding a package that you’ve previously downloaded to
+your computer (e.g. as a .zip file) there’s an option to indicate this
+here (i.e. <em>Package Archive File (.zip; .tar.gz)</em>).</li>
+<li>You can then search for the name of the package you’re wanting to
+download in the <strong>Packages (separate multiple with space or
+comma):</strong> field. This has a nice auto-complete function in this
+field too.</li>
+<li>In <strong>Install to Library:</strong> decide where you want the
+package to be downloaded to on the computer. <em>Note:</em> I rarely (if
+ever) play around with the default here.</li>
+<li>Normally, ensure <strong>Install dependencies</strong> is ticked.
+this automatically downloads any additional packages that you might need
+to run within the package you’re wanting to download, in order to get it
+to work.</li>
+<li>Then click <strong>Install</strong>.</li>
+</ol>
+</div>
+<p><br></p>
+</div>
+</div>
+</div>
+<div id="introducing-rmarkdown" class="section level2">
+<h2>7. Introducing RMarkdown</h2>
+<p><strong>RMarkdown files</strong> are a very versatile R file-type
+that has a few advantages over more ‘traditional’ R scripts. In fact, I
+like to think of them as a more sophisticated version of the Scripts
+that we’ve already been worked with (see section <a
+href="#creating-your-first-r-script">4.2. Creating your first R
+Script</a>).</p>
+<p>Like Scripts, RMarkdown files they typically contain sections of R
+code, which are bookended by ‘comments’ around them that explain the
+intended functionality of the code and characteristics of the data that
+is being worked on.</p>
+<p>However, <strong>a particular advantage RMarkdown files have over R
+Scripts is that they can be used to output a number of documents
+(e.g. HTML webpages, PDFs or Word files)</strong> that report the code
+and its output, which can be read outside of R. Consequently, RMarkdown
+files are what you’ll spend a lot of your time working with if you are
+prepping code to share publicly. Equally, they’ll be what you spend a
+lot of time looking at if you are viewing other people’s published
+analyses or working through online tutorials to up-skill further in R.<a
+href="#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a></p>
+<p>We’re going to create our own RMarkdown file and use it to output an
+MS Word document that is a summary of the content of the <span
+style="color: blue;"><em>my_first_R_script.R</em></span> we created
+earlier. By going through the steps to do this, we will demonstrate some
+of the additional key features that are available within RMarkdown.
+These will help you format and produce more openly-accessible versions
+of your code.</p>
+<div id="creating-your-first-rmarkdown-file" class="section level3">
+<h3>7.1. Creating your first RMarkdown file</h3>
+<p>To create your first RMarkdown file:</p>
+<ol style="list-style-type: decimal">
+<li>In the drop-down menu at the top of RStudio select <strong>File &gt;
+New File &gt; R Markdown…</strong></li>
+<li>In the <strong>new R Markdown</strong> window that opens give your
+file a <strong>Title</strong> (e.g. my first RMarkdown) and add yourself
+as the <strong>Author</strong>.</li>
+<li>To save it:
+<ul>
+<li>Go to select <strong>File &gt; Save as</strong></li>
+<li>In the <strong>Save File – Untitled 1 window</strong> give the file
+the same name that reflects the Title you gave it in step 2 (e.g. <span
+style="color: blue;"><em>my_first_RMarkdown</em></span> and click
+<strong>save</strong>.</li>
+</ul></li>
+</ol>
+</div>
+<div id="exploring-and-editing-the-rmarkdown-file"
+class="section level3">
+<h3>7.2. Exploring and editing the RMarkdown file</h3>
+<p>Your new RMarkdown file will now have appeared in the code editor. At
+the top of it are the details you specified in setting it up (i.e. it’s
+title, author etc…). Scrolling down you’ll see it already includes some
+‘template’ text which gives instructions and suggestions on how to lay
+out the file.</p>
+<p>When you get familiar with using RMarkdown files you’ll probably just
+delete these pointers and get on with drafting your own work. For now
+though, they give you some good illustrations of the structure of a
+markdown file. Over the final few sections of this workshop we’ll edit
+these sections, to demonstrate some key points about how the RMarkdown
+files work and are laid out. For now though, let’s have a look at
+them.</p>
+<p><em>Note:</em> the numbering of these section in the image below
+correspond to the numberin sub-sections that follow here.</p>
+<div class="bordered">
+<p><img src="images/my_first_rmd.png" /></p>
+</div>
+<div id="the-header" class="section level4">
+<h4>7.2.1. the Header</h4>
+<p>This section will appear at the top of the Word document your
+markdown will later output. It contains all the pertinent metadata
+associated with your file (e.g. who wrote it, when it was created).
+There’s nothing we need to change here so we’ll move on.</p>
+</div>
+<div id="chunks-of-r-code" class="section level4">
+<h4>7.2.2. Chunks of R code</h4>
+<p>This is an example of a chunk of R code that will be embedded in the
+document your Rmarkdown file outputs. <strong>Chunks of code are ‘marked
+out’ by having a grey background in the markdown file</strong>. This
+helps distinguish them from white sections of ‘plain text’ that appear
+around them, which typically provides supporting commentary and
+explanation for the code chunks.</p>
+<p>Sections of code are bookended by three “backticks”
+(i.e. <code>```</code> ) and on the first line of a code chunk there’s a
+bracketed section that has to begin <code>{r</code> and ends with
+another closing <code>}</code>. You can insert a name for this section
+after the r in this bracket, which won’t appear in the outputted file.
+In this example chunk its name is <code>setup</code>. After the name you
+can insert a further argument (after a comma) that gives some
+instructions as to how you want the code chunk to be handled in the
+outputted file. I will call this the <strong>Header line</strong> for a
+code chunk.</p>
+<p>The <code>include=FALSE</code> argument used in the Header line tells
+R not to include either the code or its output in the resulting
+document.<a href="#fn14" class="footnote-ref"
+id="fnref14"><sup>14</sup></a> Let’s make some changes to the Header
+line so it reflects what we did in our first R script, back in section
+[5.2.1. Command R to ‘do something’].</p>
+<p>Specifically:</p>
+<ul>
+<li>Change the name of this chunk to: <code>Simple Sum</code></li>
+<li>Change the argument for how you want it handled from
+<code>include=FALSE</code> to <code>eval=TRUE</code>. This instruction
+will mean that the code you put in this chunk will be displayed in the
+outputted Word Document as well as its output.</li>
+<li>Remove line 9<a href="#fn15" class="footnote-ref"
+id="fnref15"><sup>15</sup></a> and replace with the first two lines from
+your <span style="color: blue;"><em>my_first_R_script.R</em></span> file
+(i.e. the lines with the sum and the comment that follows it,
+illustrated back in section <a href="#comment-on-your-commands">5.2.2.
+Comment on your commands</a>).</li>
+</ul>
+</div>
+<div id="plain-text-i.e.-not-r-code" class="section level4">
+<h4>7.2.3. Plain text (i.e. not ‘R code’)</h4>
+<p>This section gives an example of some plain text that would appear in
+the document your RMarkdown file outputs. At the moment this exemplar
+text gives you a link to more details on RMarkdown files and some
+instructions on what the ‘Knit’ button in the toolbar helps you do.
+<em>Note:</em> We’ll get to knitting later, don’t worry about that for
+now though!</p>
+<p>This section (from lines 12 to 16) can be thought of as being
+equivalent to the # marked ‘comments’ we made in our original R Script.
+In other words, they are what we’ll use to provide context and
+explanations in support of our chunks of R code.</p>
+<p>Typically, in this ‘metadata’ we want to use formatting (as we would
+in a text file) to:</p>
+<ol style="list-style-type: decimal">
+<li>Structure what we want to say under headings and into
+paragraphs.</li>
+<li>Provide emphasis on certain points or words</li>
+<li>Insert hyperlinks to other resources or references.</li>
+</ol>
+<p>We can set this all up here using a bit of simple formatting. Let’s
+do this by overwriting the default text with the following:</p>
+<div id="headings" class="section level5">
+<h5>7.2.3.1. Headings</h5>
+<p>Starting with <strong>Headings</strong>, in an RMarkdown file the #
+symbol means something different from when it is used in an R Script. A
+# in front of a line of plain text indicates it should be formatted as a
+Heading. You can nest sub-headings within headings too, by double
+(i.e. ## ) or triple (i.e. ###) hashing sub-headings and sub-sub
+headings, respectively.</p>
+<p>To try this out, replace the <span style="color: blue;">##R
+Markdown</span> line (line 12) with the following text. This sets out a
+structure for one main heading and two sub-headings beneath it:</p>
+<pre class="r"><code># Setting up my project
+
+## Uploading my data
+
+## Extra formatting tips</code></pre>
+</div>
+<div id="paragraphs" class="section level5">
+<h5>7.2.3.2. Paragraphs</h5>
+<p>Breaking up text within these new sections into
+<strong>paragraphs</strong> is obviously important for structuring what
+you want to say too. Under the first subheading write as following:</p>
+<pre class="r"><code># Setting up my project
+
+## Uploading my data
+
+This is how you upload a dataset. 
+
+It is really easy!
+
+## Extra formatting tips</code></pre>
+<p>You need to <strong>put an <span style="color: red;">empty
+line</span><a href="#fn16" class="footnote-ref"
+id="fnref16"><sup>16</sup></a> between each paragraph and between the
+last paragraph and the next heading</strong>. That space informs R that
+these need formatted as separate paragraphs. If you don’t leave a line
+between each paragraph in R the text will all run them together into one
+big, messy, block. 😖</p>
+</div>
+<div id="emphasis" class="section level5">
+<h5>7.2.3.3. Emphasis</h5>
+<p><strong>Emphasis</strong> can also be placed on particular words and
+phrases. One example of this would be to <strong>put certain words in
+bold</strong>. To give the instruction to place certain words/phrases in
+bold within an RMarkdown file you need to bookend them with a double
+asterisk either side, as illustrated for the fourth line in the example
+below:</p>
+<pre class="r"><code># Setting up my project
+
+## Uploading my data
+
+This is how you upload a dataset. 
+
+**It is really easy!**
+
+## Extra formatting tips</code></pre>
+<p><br></p>
+<div class="boxout">
+<div class="center">
+<p><strong>Extra tips/pointers:</strong></p>
+</div>
+<p>Lots of other types of formatting, besides simply adding Headings and
+putting things in Bold, are available in RMarkdown but I’ll leave you to
+discover further formatting tricks, should you wish to learn them, at
+another time.</p>
+<p>There’s a really good tutorial that goes into the further, formatting
+related, things you can do in RMarkdown that has been written by Chester
+Ismay, which can be founnd online here:</p>
+<p>(<a
+href="https://ismayc.github.io/rbasics-book/4-rmarkdown.html#the-components-of-an-r-markdown-file"
+class="uri">https://ismayc.github.io/rbasics-book/4-rmarkdown.html#the-components-of-an-r-markdown-file</a>)</p>
+<p>In it they explains how to italicise plain text, strikethrough
+statements, add horizontal rules, insert quotations, equations,
+bullet-points and numbered lists and more!</p>
+</div>
+</div>
+<div id="inserting-links" class="section level5">
+<h5>7.2.3.4. Inserting Links</h5>
+<p>Lastly, we can <strong>insert links</strong> into our plain text.
+This is handy when we want to provide external links to papers we’ve
+referenced or want to direct people to open access webpages where our
+publications or data are available. Hyperlinks can be created by putting
+the word we want to work as the clickable link in square brackets
+<code>[click here ]</code> and then putting the link within round
+brackets directly after this <code>(to go here)</code>. Let’s do this
+under the second subheading by entering:</p>
+<pre class="r"><code># Setting up my project
+
+## Uploading my data
+
+This is how you upload a dataset. 
+
+**It is really easy!**
+
+## Extra formatting tips
+  
+This page by Chester Ismay has lots more useful advice. See [here](https://ismayc.github.io/rbasics-book/4-rmarkdown.html)  </code></pre>
+</div>
+</div>
+<div id="adding-and-removing-chunks-of-r-code" class="section level4">
+<h4>7.2.4. Adding and Removing chunks of R code</h4>
+<p>This section of the Rmarkdown file gives an example chunk of R code,
+which has been entitled <code>cars</code> in its Header line. You’ll
+note that there’s not another argument after this chunk’s name in the
+bracket (unlike in section 7.2.2)<a href="#fn17" class="footnote-ref"
+id="fnref17"><sup>17</sup></a>. This would result in the code you put in
+this chunk being displayed in the outputted Word Document as well as its
+output. In other words RMarkdown presumes that the default for any chunk
+of R code is <code>eval = TRUE</code>.<a href="#fn18"
+class="footnote-ref" id="fnref18"><sup>18</sup></a>. <em>Note:</em> the
+<code>eval =</code> argument’s function within a code chunk’s Header
+line was already discussed in section <a href="#chunks-of-r-code">7.2.2.
+Chunks of R code</a>.</p>
+<p>In our Markdown file <strong>we don’t need this chunk of R code
+though. So, simply highlight these three lines and press Delete
+them</strong>.</p>
+<p><strong>Instead</strong>, let’s add a couple of chunks of R code
+underneath the “Uploading my data” sub-heading, as illustrated
+below:</p>
+<div class="bordered">
+<p><img src="images/rmd_code_chunks.png" /></p>
+</div>
+<p><br> You can just type these new lines out or:</p>
+<ul>
+<li>Click on the <strong>Insert</strong> button in the toolbar for the
+RMarkdown file (circled in <span style="color: red;">red</span>
+above).</li>
+<li>In the drop-down menu that appears <strong>select R</strong>, below
+this option you’ll see there are further options to insert code chunks
+from other programming languages too.</li>
+<li><strong>Repeat this process to create two code chunks</strong>: one
+that spans lines 18-20 and one that spans lines 22-24, as shown in the
+figure above.</li>
+<li>Into both chunks insert the line of R code that created the <span
+style="color: blue;"><em>my_first_dataset</em></span> object in your
+project’s environment, from the <span
+style="color: blue;">ExampleSDQ_data.csv</span> file earlier (see
+section <a href="#the-environment-top-right-pane">5.3. The Environment
+(top right pane)</a>).</li>
+</ul>
+<p>To finish up, let’s play around with how these two chunks will be
+treated in the final output. Do this by updating the code in the Header
+lines of the respective chunks as follows:</p>
+<ol style="list-style-type: decimal">
+<li><strong>In the first chunk</strong>, update the <code>{r}</code>
+bracket so it reads <code>{r show_dont_do, eval = FALSE}</code>. The
+<code>eval = FALSE</code> argument here will mean that this chunk of R
+code will be displayed but it won’t be run (AKA <em>evaluated</em>) in
+the R console . This can be useful when you want to show a bit of code
+in your final document but don’t actually want it to be run.
+<em>Scenarios where this might be useful are if:</em>
+<ul>
+<li>In writing a document for teaching purposes, you want to demonstrate
+a common coding error.</li>
+<li>Sometimes there are multiple versions of your analysis code that you
+want to present to aid a reader’s understanding (e.g. explaining earlier
+iterations of a model you refined over several steps). However, whilst
+you may want to show all this code, you might also only want to ‘run’
+the code for the final model, so only its results appear in the final
+document.</li>
+</ul></li>
+<li><strong>In the second chunk</strong>, update the <code>{r}</code>
+bracket so it reads <code>{r dont_show_but_do, include = FALSE}</code>.
+The <code>include = FALSE</code> argument means the code will run
+(i.e. the object <span
+style="color: blue;"><em>my_first_dataset</em></span> will be created)
+but neither this chunk or the output will appear in the document created
+by this RMarkdown. <em>Scenarios where this might be useful are if:</em>
+<ul>
+<li>When you want some code to be run <em>in the background</em> to help
+create the document, which the reader does not need to be aware of. For
+example, importing a dataset into your environment from a local
+directory on your computer that an external reader will have to obtain
+by other means.<a href="#fn19" class="footnote-ref"
+id="fnref19"><sup>19</sup></a></li>
+</ul></li>
+</ol>
+<div class="boxout">
+<div class="center">
+<p><strong>Extra tips/pointers:</strong></p>
+</div>
+<p>The different ways we’ve set up the Header lines in these two chunks
+has illustrated nicely the flexibility we have to turn “on” and “off”
+chunks of code, and even having them run in the background.</p>
+<p>In terms of what we’re trying to do in these chunks though
+(i.e. simply uploading our dataset into the environment), the use of two
+chunks is overcomplicating things.</p>
+<p>The most efficient choice here would be just one chunk, with
+<code>eval=TRUE</code> probably being the most appropriate argument to
+include in its Header line, to instruct R on how you want it
+handled.</p>
+</div>
+</div>
+<div id="including-output-without-its-code" class="section level4">
+<h4>7.2.5. Including output without its code</h4>
+<p>There’s one last option we can apply to handling chunks of R code
+which we haven’t covered yet. This is shown in section 7.2.5. of the
+template Rmarkdown file. In this section the code chunk creates a plot
+and will include this plot in the document created <em>but without also
+including a copy of the R code chunk that created it!</em> <br></p>
+<p>It’s not unusual, when creating visualisations (e.g. graphs) in R, to
+want the final document to simple show the graph itself but not the
+‘underlying’ lines of code we used to create it. Often, these are
+unnecessary clutter. To run an R code chunk and display its output but
+hide the chunk itself we use the argument <code>echo = FALSE</code> in
+the Header line for the chunk. That’s the case in this code chunk here,
+circled in <span style="color: red;">red</span>.</p>
+<div class="bordered">
+<p><img src="images/plot_without_code.png" /></p>
+</div>
+<p><br> <em>Note:</em> In the above code we’ve also amended the code
+chunk in the template so that it presents data from the SDQ dataset we
+imported earlier.</p>
+<p>There are two arguments that need inputs in the <em>plot()</em>
+function here, separated by a comma <code>,</code>. These indicate the
+data you want placed on the X and Y axis of this plot. - The
+<strong>first argument</strong>
+(<code>my_first_dataset$Age_Years</code>) tells R the variable you want
+presented on the <strong>x-axis of this plot</strong>. This variables
+name includes the name of the variable <code>Age_Years</code>
+<em>and</em> a prefix that tells R which dataframe
+(<code>my_first_dataset</code>) it can be found in, with these two bits
+of information linked by a <code>$</code> sign.<a href="#fn20"
+class="footnote-ref" id="fnref20"><sup>20</sup></a> - The <strong>second
+argument</strong> (<code>my_first_dataset$TDS</code>) tells R the
+variable you want presented on the <strong>y-axis</strong> of this plot.
+<em>Note:</em> TDS stands for “Total Difficulties Score” and is a
+continuous score (out of 20) calculated from response to a
+questionnaire.</p>
+<div class="boxout">
+<div class="center">
+<p><strong>Extra tips/pointers:</strong></p>
+</div>
+<p><code>plot()</code> is actually a pretty basic graphing function. It
+has allowed us to illustrate a point here but one of R’s advantages is
+the really flexible visualisation packages you can use within it. One,
+called <code>ggplot2</code> is extremely popular and is part of the
+<code>tidyverse</code> family of packages we mentioned (see section <a
+href="#installing-new-packages">6.3.1. Installing new Packages</a>).
+There’s a really good online tutorial on how to get started with
+<code>ggplot2</code> that I’ll point out to you at the end of this
+workshop, if you’re interested in learning more about it.</p>
+</div>
+</div>
+<div id="in-lining-r-code-in-the-plain-text" class="section level4">
+<h4>7.2.6. In-lining R code in the plain text</h4>
+<p>The last section of the RMarkdown template file (7.2.6) gives an
+illustration of how you can ‘in-line’ R code into the plain text
+sections of your documents. This can be handy when you want to
+quote/refer to parts of your code in the surrounding comments. You’ll
+have seen me do it several times already in this material!</p>
+<p>Using RMarkdown you can quote code in your writing (in the
+font/format it displays in RStudio) by putting it in back-quotes
+<code></code>code here<code></code>.<a href="#fn21" class="footnote-ref"
+id="fnref21"><sup>21</sup></a>. In the template example, back-quotes
+have been use to pick out <code>echo = FALSE</code> as a bit of R code
+appearing within the plain text of your Markdown file. To practice doing
+this yourself, edit this section so it reads:</p>
+<div class="bordered">
+<p><img src="images/example_of_inlining.png" /></p>
+</div>
+<p><br> In this section the inline function is used in an explanation of
+R’s <code>help()</code> function. Then, in the second paragraph, you’ve
+also shown how you can use inlined code to run certain calculations in
+the plain text. That’s not apparent here but it will be when we “knit”
+this into our final output document, which is what we’ll do next!😁</p>
+</div>
+</div>
+<div id="knitting-the-rmarkdown-file-into-an-html-or-word-doc"
+class="section level3">
+<h3>7.3. Knitting the RMarkdown file into an HTML or Word doc</h3>
+<p>In RMarkdown the creation of a document from the markdown file
+(e.g. as a .html, .docx or .pdf file) is referred to as ‘knitting’ it
+together.<a href="#fn22" class="footnote-ref"
+id="fnref22"><sup>22</sup></a>. My advice would be to first create your
+document as a .html file (i.e. webpage) because this will automatically
+create a preview of it in the viewer panel in the bottom right hand pane
+of RStudio, if you follow the steps below:</p>
+<ol style="list-style-type: decimal">
+<li><p>First, <strong>click on the Cog symbol</strong> in the toolbar of
+your RMarkdown file and <strong>in the drop down menu ensure the Preview
+in Viewer Pane option is selected</strong>. See illustration below:</p>
+<div class="bordered">
+<p><img src="images/knit_to_html1.png" /></p>
+</div>
+<p><br></p></li>
+<li><p>Next, <strong>click on the downward pointing triangle next to the
+word Knit</strong> in the toolbar, and in this drop-down menu
+<strong>select Knit to HTML</strong>. See illustration below:</p>
+<div class="bordered">
+<p><img src="images/knit_to_html2.png" /></p>
+</div>
+<p><br></p></li>
+<li><p>The console should whirr away for a moment, knitting together
+your html file from the instructions in your RMarkdown file and when it
+finishes you will <strong>see a preview of this .HTML version of the
+final document in the Viewer tab in the bottom right hand pane</strong>,
+which you can scroll down through. See illustration below:</p>
+<div class="bordered">
+<p><img src="images/knit_to_html3.png" /></p>
+</div>
+<p><br></p></li>
+<li><p>Scroll down through it and see if everything is formatted as you
+would expect it to. If you switch to the Files tab (circled in <span
+style="color: red;">red</span> in the previous image) you will also see
+that several new files have been added to your R Project’s folder, most
+importantly, you’ll see an icon for the <span
+style="color: blue;">my_first_RMarkdown.html</span> file that you were
+just previewing in the viewer. This is circled in <span
+style="color: red;">red</span> in the image below.</p></li>
+</ol>
+<div class="bordered">
+<p><img src="images/knit_to_html4.png" /></p>
+</div>
+<p><br></p>
+<ol start="5" style="list-style-type: decimal">
+<li>If you’d like to see how it would display in a web browser you, just
+click on this file and <strong>select the View in Browser
+option</strong> and it’ll open up in your web browser.</li>
+<li><strong>If you spot any errors</strong> or just want to play around
+with the formatting or layout some more, simply <strong>make the changes
+necessary to the RMarkdown file</strong> in the code editor and
+<strong>then repeat your ‘knitting’ the document</strong>. This will
+update the html file, applying any further edits you’ve made to it.</li>
+<li>Lastly, <strong>to output an RMarkdown file as a Word document
+instead</strong>, repeat steps 1 and 2 but when you get to the drop-down
+menu in the second step select <strong>Knit to Word</strong> instead.
+<strong>This will create a <span
+style="color: blue;">my_first_RMarkdown.docx</span> file in your project
+directory</strong>, which should auto-open on your desktop. See
+illustration of this new file, highlighted in <span
+style="color: red;">red</span>, in the image below. If it doesn’t
+auto-open then you can click on it in your Project directory and it
+should open in Word, allowing you to go in and inspect how it’s been
+laid out.</li>
+</ol>
+<div class="bordered">
+<p><img src="images/knit_to_word.png" /></p>
+</div>
+<p><br></p>
+<p>This brings us to the end of our beginners tour through the R
+environment and its workflow.</p>
+<p>At this point, take a moment to reflect on all that you’ve learned.
+I’m hopeful that you’ll feel you now have a clearer understanding of the
+mechanics of how R works. Not a perfect understanding yet but you’re
+definitely on your way! 😁</p>
+<p>For example, after only a few hours you now know how to:</p>
+<ol style="list-style-type: decimal">
+<li>Set up your own projects in R.</li>
+<li>Carry out some activities within these project using R
+(e.g. importing data, plotting it).</li>
+<li>Publish the results of these activities in a format you could then
+share with others!</li>
+</ol>
+</div>
+</div>
+<div class="footnotes footnotes-end-of-document">
+<hr />
+<ol>
+<li id="fn1"><p>In fact, R has many cool applications beyond these two
+uses. For example, I used it to create this webpage! Data handling and
+analysis are two areas in which it really excels though.<a
+href="#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>van Dijk et al. (2020) <a
+href="https://doi.org/10.1177/0022219420945267"
+class="uri">https://doi.org/10.1177/0022219420945267</a><a
+href="#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>Open Science Collaboration (2015) <a
+href="https://doi.org/10.1126/science.aac4716"
+class="uri">https://doi.org/10.1126/science.aac4716</a><a href="#fnref3"
+class="footnote-back">↩︎</a></p></li>
+<li id="fn4"><p>Open Analysis is one of several core tenets within Open
+Science<a href="#fnref4" class="footnote-back">↩︎</a></p></li>
+<li id="fn5"><p>For example, back in the early 2000’s I learned SPSS as
+an undergraduate but then found I had to learn an entirely different
+stats package (STATA) to work effectively with colleagues in a local
+health service. STATA was the only stats package the health service were
+willing to pay the license fee for, so I had to fall in line. Nowadays,
+my colleagues and I all simply use R to work together, or another open
+source equivalent!<a href="#fnref5" class="footnote-back">↩︎</a></p></li>
+<li id="fn6"><p>Just “F!!king Around and Finding Out!”<a href="#fnref6"
+class="footnote-back">↩︎</a></p></li>
+<li id="fn7"><p>I wrote these instructions whilst downloading R and
+RStudio onto my personal laptop (a Macbook) as I don’t have admin rights
+to download onto my work laptop, which already has R and RStudio
+installed on it.<a href="#fnref7" class="footnote-back">↩︎</a></p></li>
+<li id="fn8"><p>For ease of access I also drag-and-dropped this icon
+onto the toolbar at the bottom of my desktop so I can access RStudio
+quickly in the future (i.e. without going back into applications and
+scrolling down to find it)<a href="#fnref8"
+class="footnote-back">↩︎</a></p></li>
+<li id="fn9"><p>It would be fairly straightforward to then upload this
+Project to online open-access platforms (e.g. like the <a
+href="https://osf.io/">OSF</a>) where you may already have
+pre-registered these studies’ hypotheses. When you then get to the stage
+your work’s been accepted for publication it’s then very easy to make
+your data and analysis files publicly available via such platforms - and
+you can pat yourself on the back for doing great Open Research 🥳<a
+href="#fnref9" class="footnote-back">↩︎</a></p></li>
+<li id="fn10"><p>Yes, let’s anthropomorphise R and think of them as a
+person, a somewhat complicated person who is (at times) difficult to
+speak with but someone who, deep down, is very interested in helping
+you! <a href="#fnref10" class="footnote-back">↩︎</a></p></li>
+<li id="fn11"><p>If we’re anthropomorphising Rstudio too, you can think
+of them as a friend to both you and R, who speaks both your languages,
+to a reasonable degree, and that has sat you and R down around the same
+table and is trying to help you communicate in a productive manner with
+each other.<a href="#fnref11" class="footnote-back">↩︎</a></p></li>
+<li id="fn12"><p>e.g. the <code>brms</code> package for doing Bayesian
+modelling, the <code>lme4</code> package for doing multi-level
+modelling, the <code>lavaan</code> package for doing structural equation
+modelling, the <code>wrs2</code> packed for robust methods (i.e. a lot
+of functionality that you can’t get to the same degree in SPSS)! 🤩<a
+href="#fnref12" class="footnote-back">↩︎</a></p></li>
+<li id="fn13"><p>A lot of online tutorials are created published using
+RMarkdown. Like this one! 😁<a href="#fnref13"
+class="footnote-back">↩︎</a></p></li>
+<li id="fn14"><p>R will run the code but its output will be ‘hidden’,
+not appearing, in the final outputted document.<a href="#fnref14"
+class="footnote-back">↩︎</a></p></li>
+<li id="fn15"><p>the one that reads
+<code>knitr::opts_chunk$set(echo = TRUE)</code><a href="#fnref15"
+class="footnote-back">↩︎</a></p></li>
+<li id="fn16"><p>This is sometimes referred to as a ’line break’<a
+href="#fnref16" class="footnote-back">↩︎</a></p></li>
+<li id="fn17"><p>e.g. where there was a further argument of
+<code>include = FALSE</code> or <code>eval = TRUE</code><a
+href="#fnref17" class="footnote-back">↩︎</a></p></li>
+<li id="fn18"><p>So did we need to specify <code>eval = TRUE</code> for
+the previous chunk in section <a href="#chunks-of-r-code">7.2.2. Chunks
+of R code</a>? 🤔 No, R would have defaulted to doing this anyway. It
+did gave us an opportunity to discuss what this argument does though,
+and an opportunity to show you how to edit it<a href="#fnref18"
+class="footnote-back">↩︎</a></p></li>
+<li id="fn19"><p>For example, they may need to instead download your
+data from an online open access repository<a href="#fnref19"
+class="footnote-back">↩︎</a></p></li>
+<li id="fn20"><p>It might seem obvious right now that this variables is
+within this dataframe because that is the only dataset we have uploaded
+to the R environment. However, when you got further on in your work in R
+it is very possible you will have multiple dataframes in use
+simultaneously. Thus R requires us, from the outset, to prefix each
+variable’s name with the name of the dataframe if comes from, so what
+we’re asking for is always clear. <a href="#fnref20"
+class="footnote-back">↩︎</a></p></li>
+<li id="fn21"><p>What’s a back-quote look like? It’s like a ‘small
+apostrophe’. On a regular QWERTY keyboard you’ll usually find it just
+above the shift key and to the left of the 1.<a href="#fnref21"
+class="footnote-back">↩︎</a></p></li>
+<li id="fn22"><p>A charmingly eccentric term, if you ask me! 🧶<a
+href="#fnref22" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3,h4",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

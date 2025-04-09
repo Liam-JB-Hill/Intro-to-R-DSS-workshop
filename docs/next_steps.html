@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Next steps</title>
+
+<script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Intro to R DSS workshop</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">About</a>
+</li>
+<li>
+  <a href="workshop.html">Workshop</a>
+</li>
+<li>
+  <a href="next_steps.html">Next Steps</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Next steps</h1>
+
+</div>
+
+
+<div id="advice-on-taking-your-next-steps-in-learning-r"
+class="section level2">
+<h2>Advice on taking your next steps in learning R</h2>
+<p>For the time being, I have developed this workshop to be
+standalone.</p>
+<p>I sincerely hope thought that the exercises within the workshop have
+whetted your appetite to <span style="color: red;"><strong>learn more
+about how to use R as a platform for organising, managing, visualising
+and/or analysing your data and disseminating your finding as Open
+Science/Research</strong></span>.</p>
+<p>To help you on this journey, I’ve compiled a list of ‘highly
+recommended’ resources below that could be useful for you to check out
+in future independent learning. I’ve tiered these in terms of things you
+could get into quite quickly and some materials that you might want to
+make a longer-term investment in.</p>
+<div id="learning-more-about-rmarkdown-and-r-programming-basics"
+class="section level3">
+<h3>1. Learning more about RMarkdown and R programming basics</h3>
+<p>In section [7.2.3.3. Emphasis] I already mentioned that Chester Ismay
+has a really good introductory online ‘book’ that covers the basics of
+RMarkdown. It’s called <a
+href="https://rbasics.netlify.app/index.html">Getting Used to R,
+RStudio, and R Markdown</a>. In particular, it’s useful if you want to
+explore more the functionality of RMarkdown. However, in later chapters
+he also:</p>
+<ul>
+<li>Gives an <strong>Intro to R using RMarkdown,</strong> which goes
+through some of the basic programming principles you need to understand
+when first learning to code in R. These exercises will cover a few more
+thing than we’ve had time to cover in this workshop, so may prove
+invaluable to you.</li>
+<li>Gives some advice on <strong>Deciphering Common R Errors</strong>,
+and links to some other blogs on this subject that offer good advice
+too. A lot of the time learning in R is a process of making errors and
+then spending time developing an understanding why your code hasn’t run,
+using the Error message to help infer what’s gone wrong. After a while
+you’ll get quite good at this and less irritated by the fact things
+typically don’t ‘go right first time’!</li>
+</ul>
+</div>
+<div id="building-your-data-management-and-visualisation"
+class="section level3">
+<h3>2. Building your Data management and visualisation</h3>
+<p>As mentioned earlier, most researchers that have learned how to use R
+in the last decade or so have done so whilst making use of Hadley
+Wickham’s <code>tidyverse</code> packages, which make the programming of
+R more intuitive and user friendly.</p>
+<p>He has a great book with lots of activities and exercises within it
+called <a href="https://r4ds.hadley.nz/">R for Data Science</a>, which
+is freely available as an open access online book. If I could only
+recommend one resource this would be <em>THE</em> book I’d suggest
+someone with no experience of programming who wants to start with, as
+they begin to learn how to use R. It gets you up to speed on how to use
+the tidyverse packages, which offer some great tools for visualising and
+‘tidying’ your data (i.e. <code>ggplot2</code> and <code>tidyr</code>,
+respectively). In R4DS’s later chapters it even starts to introduce some
+statistical modelling concepts too.<a href="#fn1" class="footnote-ref"
+id="fnref1"><sup>1</sup></a></p>
+</div>
+<div id="using-r-to-do-statistical-analyses" class="section level3">
+<h3>3. Using R to do statistical analyses</h3>
+<p>There’s a several specific packages, courses and textbooks that I
+think are really good ways of getting yourself upskilled in doing
+various types of analysis in R. I am by no means aware of every package
+or teaching text that exists in relation to #RStats.<a href="#fn2"
+class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
+<p>Below is simply a list of some I’ve either used and found valuable
+myself or I’ve heard being highly recommended by my past project and PhD
+students.</p>
+<ul>
+<li>Firstly, if you liked Chester Ismay’s introductory online book
+(mentioned in section [8.1 Learning more about RMarkdown and R
+programming basics]) he also has one that covers some of the basics of
+statistical analysis in R, called <a
+href="https://moderndive.com/v2/">ModernDive</a>. Again, it’s completely
+free and open access .<a href="#fn3" class="footnote-ref"
+id="fnref3"><sup>3</sup></a> It’s relatively short and, like <a
+href="https://r4ds.hadley.nz/">R for Data Science</a>, it doesn’t get
+deep into ‘advanced’ stats, only going as far as multiple
+regression.</li>
+<li>For a much broader and comprehensive package for teaching you
+statistical methods you could check out Andy Field’s <a
+href="https://milton-the-cat.rocks/adventr.html">Adventr</a> package.
+The package was created as a series of interactive tutorials that you
+can run within R that go alongside his 2016 textbook: <a
+href="https://uk.sagepub.com/en-gb/eur/an-adventure-in-statistics/book275264">An
+Adventure in Statistics: the reality enigma</a>. The package is free, as
+are the tutorials within it, and some of my past PhD students
+recommended this as a good introductory text for doing stats in R.
+Andy’s textbook obviously isn’t free though!<a href="#fn4"
+class="footnote-ref" id="fnref4"><sup>4</sup></a></li>
+<li>Lastly, there may come a time when your interest in statistics leads
+you beyond ‘traditional’ frequentist (Null Hypothesis Significance
+Testing) approaches and into the world of Bayesian Modelling. If that
+happens, then R is really the best package to use and the best
+introductory textbook I’ve found on these methods is called <a
+href="https://xcelab.net/rm/">Statstical Rethinking</a>, by Richard
+McElreath. His <a href="https://www.youtube.com/@rmcelreath">lectures
+are on youtube</a> too (if you fancy watching rather than reading) and
+his <a href="https://github.com/rmcelreath/stat_rethinking_2024">online
+materials to support his teaching</a>, which basically goes through his
+book’s content, I’ve also found really accessible too!</li>
+</ul>
+</div>
+</div>
+<div class="footnotes footnotes-end-of-document">
+<hr />
+<ol>
+<li id="fn1"><p>Mostly, it covers the basics of linear regression
+modelling.<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>There are well over 10,000 R packages on the CRAN
+server, available for you to download. Only a proportion of them will be
+packages for doing statistical modelling. However, if you think that
+some of these packages are almost equivalent in scope to the
+functionality paid-for stats packages, like SPSS, offer, you quickly
+begin to the realise the increased potential R offers you.<a
+href="#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>Hopefully you’re noticing a theme here!<a href="#fnref3"
+class="footnote-back">↩︎</a></p></li>
+<li id="fn4"><p>If you want the back-story of how I got interested in R,
+I first learned statistics largely in SPSS, drawing heavily on Andy
+Field’s then seminal textbook: <a
+href="https://us.sagepub.com/en-us/nam/discovering-statistics-using-ibm-spss-statistics/book285130">Discovering
+Statistics Using SPSS</a>, which is now on its 6th edition. However,
+during my PhD I would frequently find myself running into brick walls
+when reading sections of that textbook. Andy would allude to certain
+‘robust’ analyses being extremely useful alternatives to more
+bog-standard ones that I was finding I couldn’t use because my data
+unhelpfully violated various assumptions. Only, Andy explained that SPSS
+couldn’t help me run any of these new-fangled analyses. Instead, I was
+advised that I’d have to learn how to run them in a (at the time) “new
+on the scene” stats software called R. What is more, Andy then released
+a textbook in 2012 called <a
+href="https://us.sagepub.com/en-us/nam/discovering-statistics-using-r/book236067">Discovering
+Statistics Using R</a>, which was basically an expanded version of his
+original SPSS textbook, with extra sections added in all the places
+where I’d previously found dead-ends because R trumped SPSS in being
+able to run the robust methods. Need I say more – at that point I was
+100% converted!🤩<a href="#fnref4" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

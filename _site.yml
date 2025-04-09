@@ -1,11 +1,11 @@
-name: "Liam Test"
+name: "Intro to R DSS workshop"
 navbar:
-  title: "Liam Test"
+  title: "Intro to R DSS workshop"
   left:
-    - text: "Home"
+    - text: "About"
       href: index.html
-    - text: "Journal"
-      href: Journal.html
-    - text: "Links"
-      href: Links.html
+    - text: "Workshop"
+      href: workshop.html
+    - text: "Next Steps"
+      href: next_steps.html
 output_dir: "docs"
