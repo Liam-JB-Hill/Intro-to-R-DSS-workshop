@@ -1,6 +1,6 @@
-name: "Intro to R DSS workshop"
+name: "DSS workshop: Intro to R"
 navbar:
-  title: "Intro to R DSS workshop"
+  title: "DSS workshop: Intro to R"
   left:
     - text: "About"
       href: index.html

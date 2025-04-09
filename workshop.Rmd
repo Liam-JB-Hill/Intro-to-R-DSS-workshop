@@ -472,6 +472,7 @@ Given we’ve briefly had our attention drawn to the bottom right pane for the f
 -	**Plots/Viewer**, is where visualisations of your data will appear when you request them (e.g. graphs, charts etc…). Once you’ve created them there’s also a button you can click on here to export them in a variety of file-types. 
 - **Packages**, contains a list of all the R packages you have loaded on your computer. **What are R packages you might ask? Well, that’s something we’re about to talk about… `r emo::ji("smirking face")`** 
 ::::
+<br>
 
 ### 6.3. Adding Packages (to add new *Functions*)
 
@@ -653,6 +654,7 @@ There’s a really good tutorial that goes into the further, formatting related,
 
 In it they explains how to italicise plain text, strikethrough statements, add horizontal rules, insert quotations, equations, bullet-points and numbered lists and more!
 ::::
+<br>
 
 ##### 7.2.3.4. Inserting Links
 
@@ -709,6 +711,7 @@ In terms of what we’re trying to do in these chunks though (i.e. simply upload
 
 The most efficient choice here would be just one chunk, with `eval=TRUE` probably being the most appropriate argument to include in its Header line, to instruct R on how you want it handled.
 ::::
+<br>
 
 #### 7.2.5. Including output without its code
 
@@ -733,6 +736,7 @@ There are two arguments that need inputs in the *plot()* function here, separate
 :::
 `plot()` is actually a pretty basic graphing function. It has allowed us to illustrate a point here but one of R’s advantages is the really flexible visualisation packages you can use within it. One, called `ggplot2` is extremely popular and is part of the `tidyverse` family of packages we mentioned (see section [6.3.1. Installing new Packages]). There’s a really good online tutorial on how to get started with `ggplot2` that I’ll point out to you at the end of this workshop, if you’re interested in learning more about it. 
 ::::
+<br>
 
 #### 7.2.6. In-lining R code in the plain text
 
