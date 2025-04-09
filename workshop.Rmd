@@ -563,10 +563,10 @@ Your new RMarkdown file will now have appeared in the code editor. At the top of
 
 When you get familiar with using RMarkdown files you’ll probably just delete these pointers and get on with drafting your own work. For now though, they give you some good illustrations of the structure of a markdown file. Over the final few sections of this workshop we’ll edit these sections, to demonstrate some key points about how the RMarkdown files work and are laid out. For now though, let's have a look at them. 
 
-*Note:* the numbering of these section in the image below correspond to the numberin sub-sections that follow here. 
+*Note:* the numbering of these section in the image below correspond to the numbering of the sub-sections that follow here. 
 
 <div class="bordered">
-![](images/my_first_rmd.png)
+![](images/my_first_Rmd.png)
 </div>
 <br>
 
