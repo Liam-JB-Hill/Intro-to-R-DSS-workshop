@@ -223,6 +223,7 @@ Now you’ve set up your workflow RStudio should look like this, with your first
 <div class="bordered">
 ![](images/my_first_R_script.png)
 </div>
+<br>
 
 ## 5. Understanding a typical workflow
 
@@ -247,6 +248,7 @@ RStudio is very aware that it’s primary role is to act as a go-between between
 <div class="bordered">
 ![](images/script_to_console.png)
 </div>
+<br>
 
 #### 5.2.1. Command R to 'do something'
 
@@ -264,6 +266,7 @@ This should produce the following output in the console shown below, which shows
 <div class="bordered">
 ![](images/my_first_output.png)
 </div>
+<br>
 
 #### 5.2.2. Comment on your commands
 Now let’s show you how to also write ‘comments’ into your R script. These are lines of code that aren’t passed on to your console when you hit `r colourise("Run", "red")`.  
@@ -321,7 +324,6 @@ Good programmers write code that humans can understand.”***</center>
 
 `r colourise("**My answer:**", "blue")` On a purely selfish level, comments also help **you** structure and plan out the code you need to write and, once it is written, aid **you** in recalling to mind what different bits of code do. This can be particularly useful if it’s been a few days/weeks/months since you last looked at your analysis script and you’re trying to do something complex within it. This all comes back to an issue of Language too. As I mentioned in section 1.3, R needs you to communicate with it in its Language but we also need to provide translation (for ourselves and others) so that this ‘machine language’ is more easily interpretable by humans!
 
-
 #### 5.2.3. Saving your R Script
 
 Before we move on to look at the remaining two panes we’ll quickly pause to save the code we’ve written in our R Script. The quickest way to do this is to press the diskette symbol in the tool bar of the Code Editor (circled in `r colourise("red","red")` in the figure below):
@@ -338,6 +340,7 @@ Before we move on to look at the remaining two panes we’ll quickly pause to sa
 
 You’ll notice that as soon as we do this, the name of the Script in the tab above turns **black**. If we wrote more code the name of the Script would turn back to `r colourise("**red**", "red")`, which is a useful reminder that there is work within the script that has not yet been saved!
 ::::
+<br>
 
 ### 5.3. The Environment (top right pane)
 
@@ -345,7 +348,12 @@ The panel in the top right defaults to showing you your current R “environment
 
 Let’s have a go at doing that now by following these steps:
 
-1. First, we need to put some data in our project folder that we can then load into our R Environment. To do this, download the `r colourise("*ExampleSDQ_data.csv*","blue")`  dataset from [here](link to be added), and place it in the *my_first_R_project** directory that you created earlier (e.g. I created my project on my desktop, so I just dropped the file in its 'folder' there). If you’ve done this correctly the file should now be listed in R Studio in the bottom left pane (as per the screenshot below (added dataset circled in `r colourise("red","red")`):
+1. First, we need to put some data in our project folder that we can then load into our R Environment. To do this, download the `r colourise("*ExampleSDQ_data.csv*","blue")` dataset from [here](https://github.com/Liam-JB-Hill/Intro-to-R-DSS-workshop/blob/73d856dd76feed4c6e226649109fcbb870ce3cab/workshop_data/ExampleSDQ_data.csv), and place it in the *my_first_R_project** directory that you created earlier 
+
+- *Note 1:* On the webpage you're taken to, click on the radio button with three dots on it in the top right hand corner of your screen, the first option on the drop-down menu that appears will be to download this datafile. 
+- *Note 2:* I created my project on my desktop, so I just dropped the file in its 'folder' there.
+
+If you’ve done this correctly the file should now be listed in R Studio in the bottom left pane (as per the screenshot below (added dataset circled in `r colourise("red","red")`):
 
 <div class="bordered">
 ![](images/my_first_dataset.png)
@@ -560,6 +568,7 @@ When you get familiar with using RMarkdown files you’ll probably just delete t
 <div class="bordered">
 ![](images/my_first_rmd.png)
 </div>
+<br>
 
 #### 7.2.1. the Header
 
@@ -791,8 +800,8 @@ This brings us to the end of our beginners tour through the R environment and it
 
 At this point, take a moment to reflect on all that you've learned. I'm hopeful that you'll feel you now have a clearer understanding of the mechanics of how R works. Not a perfect understanding yet but you're definitely on your way! `r emo::ji("beaming face with smiling eyes")` 
 
-For example, after only a few hours you now know how to: 
+**For example, after only a few hours you now know how to:** 
 
-1. Set up your own projects in R.
-2. Carry out some activities within these project using R (e.g. importing data, plotting it).
-3. Publish the results of these activities in a format you could then share with others!  
+**1. Set up your own projects in R.**
+**2. Carry out some activities within these project using R (e.g. importing data, plotting it).**
+**3. Publish the results of these activities in a format you could then share with others!**  
