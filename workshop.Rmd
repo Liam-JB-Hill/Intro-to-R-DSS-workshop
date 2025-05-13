@@ -72,13 +72,13 @@ library(emo)
 
 This workshop will introduce you to a programming language, called R, which is a particularly useful tool to use when you need to handle and organise quantitative data and/or statistically analyse this kind of data.^[In fact, R has many cool applications beyond these two uses. For example, I used it to create this webpage! Data handling and analysis are two areas in which it really excels though.] 
 
-There are several upsides (and a few challenges) associated with learning to use R, which I've summarised in this first section. For a fuller explanation of why R is a useful tool for researchers, especially those who want to do [Open Science/Research](https://support-for-researchers.ed.ac.uk/getting-started/doing-research/open-research) and apply an [Open approach to Analysis](https://doi.org/10.1177/0022219420945267)^[van Dijk et al. (2020) https://doi.org/10.1177/0022219420945267], please refer back to my session on this subject earlier in the week: [link to previous session]().
+There are several upsides (plus a few challenges) associated with learning to use R but it is an especially useful tool for those who want to do [Open Science/Research](https://support-for-researchers.ed.ac.uk/getting-started/doing-research/open-research) and apply an [Open approach to Analysis](https://doi.org/10.1177/0022219420945267)^[van Dijk et al. (2020) https://doi.org/10.1177/0022219420945267]. I've summarised several of these in this first section. 
 
 :::: {.boxout data-latex=""}
 ::: {.center data-latex=""}
 **Top tip/pointer:**
 :::
-If you have attended the previous session (see link above), feel free to skip the rest of section 1. This will just be a recap of some key points from it.
+If you don't need any convincing or persuading to use R (i.e. you're not reading this wondering 'Why should I learn this?') feel free to skip over section 1 and get on with working through the more practical sections that come later. 
 ::::
 <br>
 
